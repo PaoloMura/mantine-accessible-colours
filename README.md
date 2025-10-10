@@ -50,6 +50,10 @@ yarn dev
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
+## Live Demo
+
+🚀 **[View Live Demo](https://paolomura.github.io/mantine-accessible-colours/)**
+
 ## Usage
 
 1. **Select a Base Color**: Use the color picker to choose your primary color
