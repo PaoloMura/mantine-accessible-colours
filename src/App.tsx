@@ -19,6 +19,7 @@ import VariantSection from "./sections/VariantSection";
 import AccessibilitySection from "./sections/AccessibilitySection";
 import ShadesSection from "./sections/ShadesSection";
 import renderedColor from "./lib/renderedColor";
+import OutputSection from "./sections/OutputSection";
 
 const DEFAULT_LIGHT_VARIANTS = {
   filled: {
@@ -204,14 +205,14 @@ export default function App() {
               <Divider />
 
               <Grid grow>
-                <Grid.Col span={{ base: 12, sm: 6, md: 2 }}>
+                <Grid.Col span={{ base: 12, sm: 6, md: 2 }} mb="xl">
                   <Group>
                     <ShadesSection shades={shades} />
                     <Divider orientation="vertical" visibleFrom="sm" />
                   </Group>
                 </Grid.Col>
 
-                <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
+                <Grid.Col span={{ base: 12, sm: 6, md: 4 }} mb="xl">
                   <Group h="100%" align="flex-start">
                     <VariantSection
                       shades={shades}
@@ -224,7 +225,7 @@ export default function App() {
                   </Group>
                 </Grid.Col>
 
-                <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
+                <Grid.Col span={{ base: 12, sm: 6, md: 3 }} mb="xl">
                   <AccessibilitySection
                     shades={shades}
                     variants={isLightMode ? lightVariants : darkVariants}
@@ -233,6 +234,12 @@ export default function App() {
               </Grid>
 
               <Divider />
+
+              <OutputSection
+                shades={shades}
+                lightVariants={lightVariants}
+                darkVariants={darkVariants}
+              />
             </Stack>
           </Container>
         </AppShellMain>
