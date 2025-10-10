@@ -13,13 +13,14 @@ import {
   Title,
 } from "@mantine/core";
 import { useState } from "react";
-import generateShades from "./lib/generateShades";
-import ColourInputSection from "./sections/ColourInputSection";
-import VariantSection from "./sections/VariantSection";
-import AccessibilitySection from "./sections/AccessibilitySection";
-import ShadesSection from "./sections/ShadesSection";
-import renderedColor from "./lib/renderedColor";
-import OutputSection from "./sections/OutputSection";
+import { generateShades, renderedColor } from "./lib";
+import {
+  AccessibilitySection,
+  ColourInputSection,
+  OutputSection,
+  ShadesSection,
+  VariantSection,
+} from "./sections";
 
 const DEFAULT_LIGHT_VARIANTS = {
   filled: {

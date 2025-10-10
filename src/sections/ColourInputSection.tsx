@@ -1,7 +1,6 @@
 import { Box, ColorSwatch, Group, Title } from "@mantine/core";
 import Color from "color";
-import SliderInput from "../components/SliderInput";
-import HexInput from "../components/HexInput";
+import { HexInput, SliderInput } from "../components";
 
 interface ColourInputSectionProps {
   hue: number;

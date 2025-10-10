@@ -1,6 +1,5 @@
 import { Button, Stack, Title } from "@mantine/core";
-import VariantInput from "../components/VariantInput";
-import ThemeButton from "../components/ThemeButton";
+import { ThemeButton, VariantInput } from "../components";
 
 type VariantMap = { [key: string]: { shade: number; opacity?: number } };
 

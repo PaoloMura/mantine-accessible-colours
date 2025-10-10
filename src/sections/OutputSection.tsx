@@ -1,5 +1,5 @@
 import { Box, Code, Title } from "@mantine/core";
-import renderedColor from "../lib/renderedColor";
+import { renderedColor } from "../lib";
 
 interface OutputSectionProps {
   shades: string[];

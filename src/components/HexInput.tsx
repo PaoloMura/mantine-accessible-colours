@@ -1,6 +1,6 @@
 import { Button, Group, TextInput } from "@mantine/core";
 import { useState } from "react";
-import isValidHex from "../lib/isValidHex";
+import { isValidHex } from "../lib/";
 
 interface HexInputProps {
   onSubmit: (hex: string) => void;

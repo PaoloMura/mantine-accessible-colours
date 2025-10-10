@@ -8,7 +8,7 @@ import {
   TextInput,
 } from "@mantine/core";
 import { IconCircleHalf2 } from "@tabler/icons-react";
-import renderedColor from "../lib/renderedColor";
+import { renderedColor } from "../lib";
 
 interface VariantInputProps {
   name: string;

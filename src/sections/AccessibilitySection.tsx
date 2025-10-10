@@ -1,7 +1,7 @@
 import { Stack, Title, useComputedColorScheme } from "@mantine/core";
 import contrast from 'get-contrast';
 import color from 'color';
-import ButtonGroup from "../components/ButtonGroup";
+import { ButtonGroup } from "../components";
 
 interface AccessibilitySectionProps {
   shades: string[];
