@@ -12,6 +12,9 @@
   "dependencies": {
     "@mantine/core": "8.3.3",
     "@mantine/hooks": "8.3.3",
+    "@tabler/icons-react": "^3.35.0",
+    "color": "^5.0.2",
+    "get-contrast": "^3.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
