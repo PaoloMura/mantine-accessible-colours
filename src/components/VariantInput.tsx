@@ -34,7 +34,7 @@ export default function VariantInput({
   const colorScheme = useComputedColorScheme("light");
   const finalColour = renderedColor(shade, opacity, shades);
 
-  const variantValue = `var(--mantine-color-yourKey-${shade})`;
+  const variantValue = opacity ? `${finalColour}` : `var(--mantine-color-yourKey-${shade})`;
 
   const renderSelectOption: SelectProps["renderOption"] = ({ option }) => (
     <Group flex={1} gap="xs">
