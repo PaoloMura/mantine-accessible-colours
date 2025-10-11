@@ -3,8 +3,8 @@ import {
   AppShell,
   AppShellHeader,
   AppShellMain,
+  Box,
   Container,
-  createTheme,
   Divider,
   Grid,
   Group,
@@ -21,60 +21,8 @@ import {
   ShadesSection,
   VariantSection,
 } from "./sections";
-
-const DEFAULT_LIGHT_VARIANTS = {
-  filled: {
-    shade: 6,
-  },
-  filledHover: {
-    shade: 7,
-  },
-  light: {
-    shade: 6,
-    opacity: 0.1,
-  },
-  lightHover: {
-    shade: 6,
-    opacity: 0.12,
-  },
-  lightColor: {
-    shade: 6,
-  },
-  outline: {
-    shade: 6,
-  },
-  outlineHover: {
-    shade: 6,
-    opacity: 0.05,
-  },
-};
-
-const DEFAULT_DARK_VARIANTS = {
-  filled: {
-    shade: 6,
-  },
-  filledHover: {
-    shade: 7,
-  },
-  light: {
-    shade: 6,
-    opacity: 0.1,
-  },
-  lightHover: {
-    shade: 6,
-    opacity: 0.12,
-  },
-  lightColor: {
-    shade: 6,
-  },
-  outline: {
-    shade: 6,
-  },
-  outlineHover: {
-    shade: 6,
-    opacity: 0.05,
-  },
-};
+import { DEFAULT_LIGHT_VARIANTS, DEFAULT_DARK_VARIANTS } from "./constants";
+import { createTheme, Shades } from "./theme";
 
 export default function App() {
   const [hue, setHue] = useState(210);
@@ -111,23 +59,7 @@ export default function App() {
     }
   };
 
-  const theme = createTheme({
-    defaultRadius: "xl",
-    colors: {
-      newPrimary: shades as [
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string
-      ],
-    },
-  });
+  const theme = createTheme(shades as Shades);
 
   return (
     <MantineProvider
@@ -195,7 +127,7 @@ export default function App() {
 
         <AppShellMain>
           <Container size="md" py="lg">
-            <Stack gap="lg">
+            <Stack gap="xl">
               <ColourInputSection
                 hue={hue}
                 setHue={setHue}
@@ -207,14 +139,14 @@ export default function App() {
 
               <Grid grow>
                 <Grid.Col span={{ base: 12, sm: 6, md: 2 }} mb="xl">
-                  <Group>
+                  <Group justify="space-between" h="100%">
                     <ShadesSection shades={shades} />
                     <Divider orientation="vertical" visibleFrom="sm" />
                   </Group>
                 </Grid.Col>
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }} mb="xl">
-                  <Group h="100%" align="flex-start">
+                  <Group justify="center" h="100%">
                     <VariantSection
                       shades={shades}
                       variants={isLightMode ? lightVariants : darkVariants}
@@ -227,10 +159,12 @@ export default function App() {
                 </Grid.Col>
 
                 <Grid.Col span={{ base: 12, sm: 6, md: 3 }} mb="xl">
-                  <AccessibilitySection
-                    shades={shades}
-                    variants={isLightMode ? lightVariants : darkVariants}
-                  />
+                  <Box maw={326} mx="auto">
+                    <AccessibilitySection
+                      shades={shades}
+                      variants={isLightMode ? lightVariants : darkVariants}
+                    />
+                  </Box>
                 </Grid.Col>
               </Grid>
 

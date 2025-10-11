@@ -20,16 +20,25 @@ export default function HexInput({ onSubmit }: HexInputProps) {
   };
 
   return (
-    <Group align="flex-start" my="md">
+    <Group
+      justify="space-between"
+      align="flex-start"
+      gap="xs"
+      my="md"
+      maw={400}
+    >
       <TextInput
         placeholder="#ff0000"
-        mb="md"
         value={value}
         onChange={(event) => setValue(event.currentTarget.value)}
         error={error ? "Invalid hex colour" : null}
+        mb="md"
+        flex={1}
       />
 
-      <Button color="light-dark(black, white)" c="light-dark(white, black)" onClick={handleSubmit}>Set from Hex</Button>
+      <Button variant="filled" color="primary" onClick={handleSubmit} flex={1}>
+        Set from Hex
+      </Button>
     </Group>
   );
 }

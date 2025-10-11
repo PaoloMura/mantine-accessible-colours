@@ -1,4 +1,4 @@
-import { Button, Stack, Title } from "@mantine/core";
+import { Button, ScrollArea, Stack, Title } from "@mantine/core";
 import { ThemeButton, VariantInput } from "../components";
 
 type VariantMap = { [key: string]: { shade: number; opacity?: number } };
@@ -19,30 +19,28 @@ export default function VariantSection({
   onToggleTheme,
 }: VariantSectionProps) {
   return (
-    <Stack gap="sm">
-      <Title order={3}>Specify variants</Title>
+    <ScrollArea offsetScrollbars="x" w={326}>
+      <Stack gap="sm" style={{ overflow: "scroll" }}>
+        <Title order={3}>Specify variants</Title>
 
-      {Object.entries(variants).map(([name, { shade, opacity }]) => (
-        <VariantInput
-          key={name}
-          name={name}
-          shade={shade}
-          setShade={(newShade) => setVariant(name, newShade, opacity)}
-          opacity={opacity}
-          setOpacity={(newOpacity) => setVariant(name, shade, newOpacity)}
-          shades={shades}
-        />
-      ))}
+        {Object.entries(variants).map(([name, { shade, opacity }]) => (
+          <VariantInput
+            key={name}
+            name={name}
+            shade={shade}
+            setShade={(newShade) => setVariant(name, newShade, opacity)}
+            opacity={opacity}
+            setOpacity={(newOpacity) => setVariant(name, shade, newOpacity)}
+            shades={shades}
+          />
+        ))}
 
-      <Button
-        color="light-dark(black, white)"
-        c="light-dark(white, black)"
-        onClick={onReset}
-      >
-        Reset to defaults
-      </Button>
+        <Button color="primary" variant="filled" onClick={onReset}>
+          Reset to defaults
+        </Button>
 
-      <ThemeButton onToggleTheme={onToggleTheme} />
-    </Stack>
+        <ThemeButton onToggleTheme={onToggleTheme} />
+      </Stack>
+    </ScrollArea>
   );
 }

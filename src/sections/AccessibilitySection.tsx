@@ -39,7 +39,7 @@ export default function AccessibilitySection({
   const whiteContrast = Math.round(contrast.ratio(whiteColor, whiteBg) * 100) / 100;
 
   return (
-    <Stack gap="md">
+    <Stack gap="lg">
       <Title order={3}>Accessibility</Title>
       <ButtonGroup
         variant="filled"
