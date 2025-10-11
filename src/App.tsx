@@ -67,6 +67,8 @@ export default function App() {
       cssVariablesResolver={() => ({
         variables: {},
         light: {
+          "--mantine-color-newPrimary-text":
+            shades[lightVariants.text.shade],
           "--mantine-color-newPrimary-filled":
             shades[lightVariants.filled.shade],
           "--mantine-color-newPrimary-filled-hover":
@@ -92,6 +94,8 @@ export default function App() {
           ),
         },
         dark: {
+          "--mantine-color-newPrimary-text":
+            shades[darkVariants.text.shade],
           "--mantine-color-newPrimary-filled":
             shades[darkVariants.filled.shade],
           "--mantine-color-newPrimary-filled-hover":

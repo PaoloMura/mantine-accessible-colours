@@ -6,6 +6,9 @@ export type VariantMap = {
 };
 
 export const DEFAULT_LIGHT_VARIANTS: VariantMap = {
+  text: {
+    shade: 6,
+  },
   filled: {
     shade: 6,
   },
@@ -33,6 +36,9 @@ export const DEFAULT_LIGHT_VARIANTS: VariantMap = {
 };
 
 export const DEFAULT_DARK_VARIANTS: VariantMap = {
+  text: {
+    shade: 4,
+  },
   filled: {
     shade: 8,
   },
