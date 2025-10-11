@@ -61,6 +61,7 @@ export default function VariantInput({
           <ColorSwatch color={shades[shade]} size={20} radius="xl" />
         }
         miw="80"
+        aria-label={`Select shade for ${name} variant`}
       />
 
       {opacity !== undefined ? (
@@ -74,6 +75,7 @@ export default function VariantInput({
           min={0}
           max={1}
           leftSection={<IconCircleHalf2 size={16} />}
+          aria-label={`Set opacity for ${name} variant`}
         />
       ) : (
         <Box miw="80" />

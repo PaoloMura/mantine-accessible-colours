@@ -68,6 +68,7 @@ export default function App() {
       cssVariablesResolver={() => ({
         variables: {},
         light: {
+          // "--mantine-color-placeholder": "var(--mantine-color-gray-8)",
           "--mantine-color-newPrimary-text": shades[lightVariants.text.shade],
           "--mantine-color-newPrimary-filled":
             shades[lightVariants.filled.shade],

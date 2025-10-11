@@ -30,6 +30,11 @@ export default function SliderInput({
         thumbLabel={label}
         flex={1}
         color="light-dark(black, white)"
+        styles={{
+          markLabel: {
+            color: "var(--mantine-color-gray-7)"
+          }
+        }}
       />
     </Group>
   );

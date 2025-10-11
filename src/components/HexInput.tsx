@@ -34,6 +34,7 @@ export default function HexInput({ onSubmit }: HexInputProps) {
         error={error ? "Invalid hex colour" : null}
         mb="md"
         flex={1}
+        aria-label="Hex colour input"
       />
 
       <Button variant="filled" color="primary" onClick={handleSubmit} flex={1}>
