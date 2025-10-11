@@ -19,7 +19,7 @@ export default function VariantSection({
   onToggleTheme,
 }: VariantSectionProps) {
   return (
-    <ScrollArea offsetScrollbars="x" w={326}>
+    <ScrollArea offsetScrollbars="x" scrollbars={false} w={326}>
       <Stack gap="sm" style={{ overflow: "scroll" }}>
         <Title order={3}>Specify variants</Title>
 

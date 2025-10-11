@@ -64,3 +64,8 @@ export const DEFAULT_DARK_VARIANTS: VariantMap = {
     opacity: 0.05,
   },
 };
+
+export const LINK = {
+  EAA: "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en",
+  WCAG: "https://www.w3.org/WAI/standards-guidelines/wcag/",
+};

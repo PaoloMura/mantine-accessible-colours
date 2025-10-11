@@ -23,6 +23,7 @@ import {
 } from "./sections";
 import { DEFAULT_LIGHT_VARIANTS, DEFAULT_DARK_VARIANTS } from "./constants";
 import { createTheme, Shades } from "./theme";
+import DescriptionSection from "./sections/DescriptionSection";
 
 export default function App() {
   const [hue, setHue] = useState(210);
@@ -67,8 +68,7 @@ export default function App() {
       cssVariablesResolver={() => ({
         variables: {},
         light: {
-          "--mantine-color-newPrimary-text":
-            shades[lightVariants.text.shade],
+          "--mantine-color-newPrimary-text": shades[lightVariants.text.shade],
           "--mantine-color-newPrimary-filled":
             shades[lightVariants.filled.shade],
           "--mantine-color-newPrimary-filled-hover":
@@ -94,8 +94,7 @@ export default function App() {
           ),
         },
         dark: {
-          "--mantine-color-newPrimary-text":
-            shades[darkVariants.text.shade],
+          "--mantine-color-newPrimary-text": shades[darkVariants.text.shade],
           "--mantine-color-newPrimary-filled":
             shades[darkVariants.filled.shade],
           "--mantine-color-newPrimary-filled-hover":
@@ -132,6 +131,10 @@ export default function App() {
         <AppShellMain>
           <Container size="md" py="lg">
             <Stack gap="xl">
+              <DescriptionSection />
+
+              <Divider />
+
               <ColourInputSection
                 hue={hue}
                 setHue={setHue}
