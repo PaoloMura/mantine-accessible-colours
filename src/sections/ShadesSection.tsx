@@ -1,4 +1,13 @@
-import { Code, ColorSwatch, Group, Stack, Text, Title } from "@mantine/core";
+import {
+  Code,
+  ColorSwatch,
+  CopyButton,
+  Group,
+  Stack,
+  Text,
+  Title,
+  Tooltip,
+} from "@mantine/core";
 
 interface ShadesSectionProps {
   shades: string[];
@@ -7,7 +16,17 @@ interface ShadesSectionProps {
 const ShadeRow = ({ shade, index }: { shade: string; index: number }) => (
   <Group>
     <Text w={20}>{index}</Text>
-    <ColorSwatch color={shade} />
+    <CopyButton value={shade} timeout={2000}>
+      {({ copied, copy }) => (
+        <Tooltip label={copied ? "Copied" : "Copy to clipboard"}>
+          <ColorSwatch
+            color={shade}
+            style={{ cursor: "pointer" }}
+            onClick={copy}
+          />
+        </Tooltip>
+      )}
+    </CopyButton>
     <Code>{shade}</Code>
   </Group>
 );
